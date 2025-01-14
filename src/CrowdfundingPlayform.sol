@@ -38,7 +38,12 @@ contract CrowdfundingPlatform {
         _;
     }
 
-    function createCampaign(uint256 goalAmount, uint256 durationInDays, string memory tokenName, string memory tokenSymbol) external {
+    function createCampaign(
+        uint256 goalAmount,
+        uint256 durationInDays,
+        string memory tokenName,
+        string memory tokenSymbol
+    ) external {
         require(goalAmount > 0, "Goal amount must be greater than zero");
 
         CampaignToken rewardToken = new CampaignToken(tokenName, tokenSymbol);
